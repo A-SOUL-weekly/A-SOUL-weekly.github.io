@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
+    <script src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+    <script src="//at.alicdn.com/t/font_2900638_5pghsrw8rvi.js"></script>
+    <style type="text/css">
+        .icon {
+            vertical-align: -1.3em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main" onclick="main()">
+        <div class="personal ava">
+            <img src="向晚版头.png" class="banner ava" />
+            <div class="text-content ava" id="向晚"></div>
+        </div>
+
+        <div class="personal bella">
+            <img src="贝拉版头.png" class="banner bella" />
+            <div class="text-content bella" id="贝拉"></div>
+        </div>
+
+        <div class="personal carol">
+            <img src="珈乐版头.png" class="banner carol" />
+            <div class="text-content carol" id="珈乐"></div>
+        </div>
+
+        <div class="personal diana">
+            <img src="嘉然版头.png" class="banner diana" />
+            <div class="text-content diana" id="嘉然"></div>
+        </div>
+
+        <div class="personal eileen">
+            <img src="乃琳版头.png" class="banner eileen" />
+            <div class="text-content eileen" id="乃琳"></div>
+        </div>
+
+        <div class="personal yangtuo">
+            <img src="羊驼版头.png" class="banner yangtuo" />
+            <div class="text-content yangtuo" id="羊驼"></div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function main() {
+        var input = document.createElement('input');
+        input.type = 'file';
+        input.click();
+
+        input.onchange = (ev) => {
+            console.log('ev', ev)
+            let files = ev.target.files
+            console.log('files', files)
+            let file = files[0]
+
+            const reader = new FileReader();
+            reader.readAsText(file);
+            reader.onload = (ev) => {
+                console.log('after read:', reader)
+                window.reader = reader
+
+                let js = reader.result
+                // console.log('js', js)
+                eval(js)
+
+                render()
+            }
+        }
+    }
+    function render() {
+        for (let girl in data) {
+            if (girl === '_') continue;
+            console.log('girl', girl);
+            let items = data[girl];
+            let dom = document.getElementById(girl);
+            console.log('dom', dom);
+
+            // badge
+            badge_text = (girl !== '羊驼' ? data['_'] : null) || items['_']
+            if (badge_text) {
+                let badge = document.createElement('img')
+                badge.src = '标签.png'
+                badge.className = 'badge'
+                dom.parentNode.appendChild(badge)
+                let badge_text_p = document.createElement('p')
+                badge_text_p.className = 'badge-text'
+                badge_text_p.innerText = badge_text
+                dom.parentNode.appendChild(badge_text_p)
+            }
+
+            for (let key in items) {
+                if (key === '_') {
+                    continue;
+                }
+                // let svg = document.createElement('svg')
+                let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                svg.classList = ['icon']
+                let svg_inner = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+                let icon_name = icon[key]
+                svg_inner.setAttribute('href', `#icon-${icon_name}`)
+                svg.appendChild(svg_inner)
+                dom.appendChild(svg)
+
+
+                let keyNode = document.createElement('p')
+                keyNode.classList = ['key']
+                keyNode.innerText = key;
+                dom.appendChild(keyNode);
+
+                let value = items[key];
+                let valueNode = document.createElement('p')
+                valueNode.classList = ['value']
+                valueNode.innerText = value;
+                dom.appendChild(valueNode)
+            }
+        }
+    }
+
+</script>
+
+
+</html>

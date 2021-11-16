@@ -1,0 +1,79 @@
+{
+  "id": "2900638",
+  "name": "asoul",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "25275725",
+      "name": "music-note",
+      "font_class": "music-note",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "25275726",
+      "name": "movie",
+      "font_class": "movie",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "25275727",
+      "name": "comment",
+      "font_class": "comment",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "25275728",
+      "name": "ticket",
+      "font_class": "ticket",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "25275729",
+      "name": "calendar-blank-outline",
+      "font_class": "calendar-blank-outline",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "25275730",
+      "name": "television-play",
+      "font_class": "television-play",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "25275731",
+      "name": "share-variant",
+      "font_class": "share-variant",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "25275732",
+      "name": "newspaper-variant-outline",
+      "font_class": "newspaper-variant-outline",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "2076364",
+      "name": "评论小",
+      "font_class": "pinglunxiao",
+      "unicode": "e8b9",
+      "unicode_decimal": 59577
+    },
+    {
+      "icon_id": "17830622",
+      "name": "评论",
+      "font_class": "pinglun",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    }
+  ]
+}
