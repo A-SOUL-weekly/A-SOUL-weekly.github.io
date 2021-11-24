@@ -87,6 +87,11 @@
             let dom = document.getElementById(girl);
             console.log('dom', dom);
 
+            if (Object.keys(items).length == 0) {
+                console.log('remove', data, dom)
+                dom.parentElement.remove();
+            }
+
             // badge
             badge_text = (girl !== '羊驼' ? data['_'] : null) || items['_']
             if (badge_text) {
